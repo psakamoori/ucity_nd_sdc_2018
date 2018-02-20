@@ -45,15 +45,23 @@ The submission describes the preprocessing techniques used and why these techniq
  Input image: 32 x 32 x 1 
  
                               IP          Filter Size  FeatureMap/Depth   Stride  Padding        OP
- Layer1:      Conv1      32 x 32 x 1         5 x 5           6             1       0        28 x 28 x 6
-              ReLU       28 x 28 x 6                                                        28 x 28 x 6
+ Layer1:     
+ 
+              Conv1      32 x 32 x 1         5 x 5           6             1       0        28 x 28 x 6
+              ReLU       28 x 28 x 6                                                        28 x 28 x 6              
               MaxPool    28 x 28 x 6         2 x 2                         2       0        14 x 14 x 6
- Layer2:      Conv2      14 x 14 x 6         5 x 5          16             1       0        10 x 10 x 16
+ Layer2:      
+ 
+              Conv2      14 x 14 x 6         5 x 5          16             1       0        10 x 10 x 16
               ReLu       10 x 10 x 16                                                       10 x 10 x 16
               MaxPool    10 x 10 x 16        2 x 2                         2       0         5 x 5 x 16
- Layer3:      Conv3       5 x  5 x 16        5 x 5          400            1       0         1 x 1 x 400
+ Layer3:      
+              
+              Conv3       5 x  5 x 16        5 x 5          400            1       0         1 x 1 x 400
               ReLu        1 x  1 x 400                                                       1 x 1 x 400
+ 
  fc1    :     Layer 2 o/p - 5 x 5 x 16   -> output 400
+ 
  fc2    :     Layer 3 0/p - 1 x 1 x 400  -> output 400
  
  Output :     FC             800                                                                 43
