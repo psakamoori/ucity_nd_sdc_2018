@@ -19,7 +19,7 @@ Downloaded dataset from : https://d17h27t6h515a5.cloudfront.net/topher/2017/Febr
 Exploratory Visualization
 -------------------------
 
-Data visualization shown in "Traffic_Sign_Classifier.html"
+Data visualization shown in "Traffic_Sign_Classifier.ipynb"
 
 
 Design and Test a Model Architechture
@@ -31,10 +31,12 @@ Preprocessing
 
 The submission describes the preprocessing techniques used and why these techniques were chosen.
 
-<Ans> MNIST data trained using LeNet is of gray images. Also, the color is not the feature that is used in 
+<Ans> 
+    1. MNIST data trained using LeNet is of gray images. Also, the color is not the feature that is used in 
       LeNet classification of MNIST. Based on the same assumption/concept. I used gray images as input train dataset
       Also, normalized such that pixels values are in the range of [-1, 1]. As, curves/edges are the real features from 
       which the network learns. Best way to represent edges/curves intensity is with normalized pixel values
+    2. Also, by normalizing the date the mean will be zero and have equal variance 
  
  Used train and test split from sklearn (80% train, 20% test)
  Model Architecture
@@ -78,14 +80,19 @@ The submission describes the preprocessing techniques used and why these techniq
  
  Others:
  -------
- Activation Function - ReLu
+ Activation Function: ReLu
  Optimizer:  Adam
- Loss = CrossEntropy
- Probability of Classification = Softmax
+ Loss: CrossEntropy
+ Probability of Classification: Softmax
  
  Solution Approach:
  -------------------
- Used predefined LeNet architecture. Tweaking hyper parameters using trial and error method
+ Used predefined LeNet architecture. 
+ Tweaking hyper parameters using trial and error method.
+ Changing train and test spilt percentage 
+ Using different kernel sizes, feature maps in each layer
+ Trying with different dropout factor 
+ 
  Training accuracy: 99.3%
  Test Accuracy: 94.6%
  
@@ -99,7 +106,7 @@ The submission describes the preprocessing techniques used and why these techniq
  
  Model Certanity- Softmax Probabilities:
  --------------------------------------
- Ploted in "Traffic_Sign_Classifier.html"
+ Ploted in "Traffic_Sign_Classifier.ipynb"
  
  
  
